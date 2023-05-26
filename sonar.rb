@@ -5,20 +5,20 @@
 class Sonar < Formula
   desc ""
   homepage ""
-  version "1.8.14"
+  version "1.8.15"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/russtone/sonar/releases/download/v1.8.14/sonar_Darwin_arm64.tar.gz"
-      sha256 "cbdcf24380af7b660245beb40c162a2e0f1ba521b8571c0407962b33a8be7765"
+    if Hardware::CPU.intel?
+      url "https://github.com/russtone/sonar/releases/download/v1.8.15/sonar_Darwin_x86_64.tar.gz"
+      sha256 "bf56b14f0306da95c94a84c2ae3092b31ab95fa4c4d52a9353103c344c351603"
 
       def install
         bin.install "sonar"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/russtone/sonar/releases/download/v1.8.14/sonar_Darwin_x86_64.tar.gz"
-      sha256 "20de49ba75e265d1033cf26bc1c362a04fd902f23df546e298134be67a131793"
+    if Hardware::CPU.arm?
+      url "https://github.com/russtone/sonar/releases/download/v1.8.15/sonar_Darwin_arm64.tar.gz"
+      sha256 "65a23c8e095686a0eb42f7584127d74495523d845b1c8dbf53ac38da8891bb7b"
 
       def install
         bin.install "sonar"
@@ -28,24 +28,24 @@ class Sonar < Formula
 
   on_linux do
     if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/russtone/sonar/releases/download/v1.8.14/sonar_Linux_arm.tar.gz"
-      sha256 "3e68a3cbc6a6fb4b9295bdb6e6ce862006f6bd2c605ebf0b41a40a72e3d007bf"
-
-      def install
-        bin.install "sonar"
-      end
-    end
-    if Hardware::CPU.intel?
-      url "https://github.com/russtone/sonar/releases/download/v1.8.14/sonar_Linux_x86_64.tar.gz"
-      sha256 "84322f3161bd9d598e8fe347c49d72dbcafe6c1b586ef0093d2dc98ddf50a24f"
+      url "https://github.com/russtone/sonar/releases/download/v1.8.15/sonar_Linux_arm.tar.gz"
+      sha256 "482f67ec3e7d4aa6e3c53f6d5fefe34a2dfa2f9e63b57c24ec892335f4dbce9d"
 
       def install
         bin.install "sonar"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/russtone/sonar/releases/download/v1.8.14/sonar_Linux_arm64.tar.gz"
-      sha256 "83ff20cefdea41bf9059eaa0c3cae2be95b029b0149f6bacb449b82a71518bdd"
+      url "https://github.com/russtone/sonar/releases/download/v1.8.15/sonar_Linux_arm64.tar.gz"
+      sha256 "1ddad5d22bfaf0369ffc42be60591b941b5f2ee50c0eeaae754ae3808cce9bc7"
+
+      def install
+        bin.install "sonar"
+      end
+    end
+    if Hardware::CPU.intel?
+      url "https://github.com/russtone/sonar/releases/download/v1.8.15/sonar_Linux_x86_64.tar.gz"
+      sha256 "787cffa6d55f9e3d5c020df52b0c757404c55449ca9b3b5f77774d10ed01ad0b"
 
       def install
         bin.install "sonar"
