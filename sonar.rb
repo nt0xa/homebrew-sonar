@@ -5,12 +5,12 @@
 class Sonar < Formula
   desc ""
   homepage ""
-  version "1.17.0"
+  version "1.18.0"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/nt0xa/sonar/releases/download/v1.17.0/sonar_Darwin_x86_64.tar.gz"
-      sha256 "34e08eb5523c35f587267a3fa820ebba8474660e710c7778efbe1f64584c1356"
+      url "https://github.com/nt0xa/sonar/releases/download/v1.18.0/sonar_Darwin_x86_64.tar.gz"
+      sha256 "b2fd25d6d724047df4a782195c0cb6cf6c4f46d237e019ae3e1f2f38136560c2"
 
       def install
         bin.install "sonar"
@@ -20,8 +20,8 @@ class Sonar < Formula
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/nt0xa/sonar/releases/download/v1.17.0/sonar_Darwin_arm64.tar.gz"
-      sha256 "9a0e45ca9b3c6f7969268444cae29e09f0d1ec16c828583d9000183e870bd958"
+      url "https://github.com/nt0xa/sonar/releases/download/v1.18.0/sonar_Darwin_arm64.tar.gz"
+      sha256 "ee9d2cef37a58a5931f823a11eaa63751f72c368bbff8d5f02f9492300b7d0b4"
 
       def install
         bin.install "sonar"
@@ -33,43 +33,34 @@ class Sonar < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      if Hardware::CPU.is_64_bit?
-        url "https://github.com/nt0xa/sonar/releases/download/v1.17.0/sonar_Linux_x86_64.tar.gz"
-        sha256 "b060a4e76afa312c022b1f121287b69544a186780f8ee04615ac9448da8ca465"
-
-        def install
-          bin.install "sonar"
-          bash_completion.install "completions/sonar.bash" => "sonar"
-          zsh_completion.install "completions/sonar.zsh" => "_sonar"
-          fish_completion.install "completions/sonar.fish" => "sonar.fish"
-        end
+    if Hardware::CPU.intel? and Hardware::CPU.is_64_bit?
+      url "https://github.com/nt0xa/sonar/releases/download/v1.18.0/sonar_Linux_x86_64.tar.gz"
+      sha256 "4284d06bbe7ca4add6bd8ebff7ca600f9a616fe72728537499425922dbc543b8"
+      def install
+        bin.install "sonar"
+        bash_completion.install "completions/sonar.bash" => "sonar"
+        zsh_completion.install "completions/sonar.zsh" => "_sonar"
+        fish_completion.install "completions/sonar.fish" => "sonar.fish"
       end
     end
-    if Hardware::CPU.arm?
-      if !Hardware::CPU.is_64_bit?
-        url "https://github.com/nt0xa/sonar/releases/download/v1.17.0/sonar_Linux_arm.tar.gz"
-        sha256 "eea311cf99cedb5511790343241ed96d3309cd48f592d39c7ae27e56198e1aab"
-
-        def install
-          bin.install "sonar"
-          bash_completion.install "completions/sonar.bash" => "sonar"
-          zsh_completion.install "completions/sonar.zsh" => "_sonar"
-          fish_completion.install "completions/sonar.fish" => "sonar.fish"
-        end
+    if Hardware::CPU.arm? and !Hardware::CPU.is_64_bit?
+      url "https://github.com/nt0xa/sonar/releases/download/v1.18.0/sonar_Linux_arm.tar.gz"
+      sha256 "f9940ffbb47aa955523577bd88913ef996670716b847c1043bbf139a6b0673fa"
+      def install
+        bin.install "sonar"
+        bash_completion.install "completions/sonar.bash" => "sonar"
+        zsh_completion.install "completions/sonar.zsh" => "_sonar"
+        fish_completion.install "completions/sonar.fish" => "sonar.fish"
       end
     end
-    if Hardware::CPU.arm?
-      if Hardware::CPU.is_64_bit?
-        url "https://github.com/nt0xa/sonar/releases/download/v1.17.0/sonar_Linux_arm64.tar.gz"
-        sha256 "2d0aca4ca65245ffc22eaef5b310a58ddbfc42cdf694faac2b56fd715e70288e"
-
-        def install
-          bin.install "sonar"
-          bash_completion.install "completions/sonar.bash" => "sonar"
-          zsh_completion.install "completions/sonar.zsh" => "_sonar"
-          fish_completion.install "completions/sonar.fish" => "sonar.fish"
-        end
+    if Hardware::CPU.arm? and Hardware::CPU.is_64_bit?
+      url "https://github.com/nt0xa/sonar/releases/download/v1.18.0/sonar_Linux_arm64.tar.gz"
+      sha256 "357650016dfa5eca6a1183fd1a5a5faa8662d25e72c136638f2e628e3d7bec50"
+      def install
+        bin.install "sonar"
+        bash_completion.install "completions/sonar.bash" => "sonar"
+        zsh_completion.install "completions/sonar.zsh" => "_sonar"
+        fish_completion.install "completions/sonar.fish" => "sonar.fish"
       end
     end
   end
