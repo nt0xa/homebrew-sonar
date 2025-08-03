@@ -5,12 +5,12 @@
 class Sonar < Formula
   desc ""
   homepage ""
-  version "1.19.4"
+  version "1.20.0"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/nt0xa/sonar/releases/download/v1.19.4/sonar_Darwin_x86_64.tar.gz"
-      sha256 "d61d92a0bf61b0655968b9763083f8bb9f8b6d6383c7c76b960fe4529326073a"
+      url "https://github.com/nt0xa/sonar/releases/download/v1.20.0/sonar_Darwin_x86_64.tar.gz"
+      sha256 "ff5e93d5341c27019b485ef78969fa71ad30f6e1eb48ec0bf4dc1585c5282d15"
 
       def install
         bin.install "sonar"
@@ -20,8 +20,8 @@ class Sonar < Formula
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/nt0xa/sonar/releases/download/v1.19.4/sonar_Darwin_arm64.tar.gz"
-      sha256 "bb42e6c8b3fc75b921868edec2c6c12b08fc0a2bb100def5dd7c25334b4410c0"
+      url "https://github.com/nt0xa/sonar/releases/download/v1.20.0/sonar_Darwin_arm64.tar.gz"
+      sha256 "7045b7b10c881e3c34dc642d694d8acb10f9c0228e98df74c5c09e895750fa59"
 
       def install
         bin.install "sonar"
@@ -34,8 +34,8 @@ class Sonar < Formula
 
   on_linux do
     if Hardware::CPU.intel? and Hardware::CPU.is_64_bit?
-      url "https://github.com/nt0xa/sonar/releases/download/v1.19.4/sonar_Linux_x86_64.tar.gz"
-      sha256 "13ffa5b5653802d74df8e82f9b92f651c052e0c5d6177552d848d8bcefb943af"
+      url "https://github.com/nt0xa/sonar/releases/download/v1.20.0/sonar_Linux_x86_64.tar.gz"
+      sha256 "d8ca7ed6bbe5b144e4791ea78f413b194c147d1984a3cdf1aeca42d08ded0a60"
       def install
         bin.install "sonar"
         bash_completion.install "completions/sonar.bash" => "sonar"
@@ -44,8 +44,8 @@ class Sonar < Formula
       end
     end
     if Hardware::CPU.arm? and !Hardware::CPU.is_64_bit?
-      url "https://github.com/nt0xa/sonar/releases/download/v1.19.4/sonar_Linux_arm.tar.gz"
-      sha256 "10651058e597c75636b30706aef98a611108fe47eb563da29b8e2292d5017d3f"
+      url "https://github.com/nt0xa/sonar/releases/download/v1.20.0/sonar_Linux_arm.tar.gz"
+      sha256 "5d23a50f2689b2089a9ccde40db4d133dbdd58dd1302a28fd3bb91446a414d02"
       def install
         bin.install "sonar"
         bash_completion.install "completions/sonar.bash" => "sonar"
@@ -54,8 +54,8 @@ class Sonar < Formula
       end
     end
     if Hardware::CPU.arm? and Hardware::CPU.is_64_bit?
-      url "https://github.com/nt0xa/sonar/releases/download/v1.19.4/sonar_Linux_arm64.tar.gz"
-      sha256 "9c62c4ce47024fb34df7c79fdb3ed479a0afe53e20d89e4ffd1e87f27dec4193"
+      url "https://github.com/nt0xa/sonar/releases/download/v1.20.0/sonar_Linux_arm64.tar.gz"
+      sha256 "0fb538e9ac74e3d0241c7a1c3b2a7b540a3aa6b89c7baa3d2bd4d7a18e0d36fa"
       def install
         bin.install "sonar"
         bash_completion.install "completions/sonar.bash" => "sonar"
